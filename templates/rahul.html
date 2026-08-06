@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Rahul Dashboard | QuantumVault</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="card">
+
+        <h1>📥 Rahul Dashboard</h1>
+
+        <p class="tagline">
+            Authorized Receiver
+        </p>
+
+        {% if file %}
+
+        <div class="file-box">
+
+            <h2>📨 New Secure File Received</h2>
+
+            <br>
+
+            <p>
+                <strong>Encrypted File:</strong>
+            </p>
+
+            <h3>{{ file.filename }}.enc</h3>
+
+            <br>
+
+            <p>
+                This file was encrypted using
+                <strong>AES-256-GCM</strong> and the AES key was
+                protected using
+                <strong>ML-KEM-768</strong>.
+            </p>
+
+            <br>
+
+            <a href="/rahul/decrypt" class="btn">
+                🔓 Decrypt & Download
+            </a>
+
+        </div>
+
+        {% else %}
+
+        <div class="file-box">
+
+            <h2>📭 Inbox Empty</h2>
+
+            <br>
+
+            <p>
+                No encrypted files have been received yet.
+            </p>
+
+        </div>
+
+        {% endif %}
+
+        <hr style="margin:35px 0; opacity:.25;">
+
+        <div class="file-box">
+
+            <h3>🔐 Decryption Process</h3>
+
+            <p>📥 Receive Encrypted File</p>
+
+            <p>⬇</p>
+
+            <p>🔑 ML-KEM-768 Recovers AES Key</p>
+
+            <p>⬇</p>
+
+            <p>🔓 AES-256-GCM Decrypts File</p>
+
+            <p>⬇</p>
+
+            <p>✅ Original File Restored</p>
+
+        </div>
+
+        <br>
+
+        <a href="/" class="back-btn">
+            ← Back to Home
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

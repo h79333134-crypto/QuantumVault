@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Eve Dashboard | QuantumVault</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="card">
+
+        <h1>⚠️ Eve Dashboard</h1>
+
+        <p class="tagline">
+            Attacker Simulation
+        </p>
+
+        {% if file %}
+
+        <div class="file-box">
+
+            <h2>📡 Intercepted Encrypted File</h2>
+
+            <br>
+
+            <p>
+                <strong>Captured File:</strong>
+            </p>
+
+            <h3>{{ file.filename }}.enc</h3>
+
+            <br>
+
+            <p>
+                Eve has intercepted the encrypted file during transmission.
+                However, the AES encryption key was encapsulated using
+                <strong>Rahul's ML-KEM-768 public key</strong>.
+            </p>
+
+            <br>
+
+            <a href="/eve/decrypt" class="btn danger">
+                🚫 Attempt Decryption
+            </a>
+
+        </div>
+
+        {% else %}
+
+        <div class="file-box">
+
+            <h2>📭 Nothing to Intercept</h2>
+
+            <br>
+
+            <p>
+                No encrypted files are currently available.
+            </p>
+
+        </div>
+
+        {% endif %}
+
+        <hr style="margin:35px 0; opacity:.25;">
+
+        <div class="file-box">
+
+            <h3>🔒 Why Eve Fails</h3>
+
+            <p>📄 Intercepts Encrypted File</p>
+
+            <p>⬇</p>
+
+            <p>🔑 Attempts ML-KEM Decapsulation</p>
+
+            <p>⬇</p>
+
+            <p>❌ Wrong Private Key</p>
+
+            <p>⬇</p>
+
+            <p>🚫 AES Key Cannot Be Recovered</p>
+
+            <p>⬇</p>
+
+            <p>❌ File Decryption Fails</p>
+
+        </div>
+
+        <br>
+
+        <a href="/" class="back-btn">
+            ← Back to Home
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

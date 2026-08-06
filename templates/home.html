@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>QuantumVault</title>
+
+    <link rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="card">
+
+            <h1>🔐 QuantumVault</h1>
+
+            <p class="tagline">
+                Securing Tomorrow's Files Today
+            </p>
+
+            <p class="description">
+                QuantumVault demonstrates secure file transfer using
+                <strong>Hybrid Encryption</strong>.
+
+                Files are encrypted using <strong>AES-256-GCM</strong>,
+                while the encryption key is securely established using
+                <strong>ML-KEM-768 (Post-Quantum Cryptography)</strong>.
+            </p>
+
+            <div class="button-group">
+
+                <a href="/dhruv" class="btn">
+                    👤 Login as Dhruv
+                </a>
+
+                <a href="/rahul" class="btn">
+                    📥 Login as Rahul
+                </a>
+
+                <a href="/eve" class="btn danger">
+                    ⚠️ Login as Eve
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

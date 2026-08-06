@@ -1,0 +1,2 @@
+Hello QuantumVault!
+This file is protected using ML-KEM + AES-256.

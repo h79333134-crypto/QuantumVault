@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dhruv Dashboard | QuantumVault</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="card">
+
+        <h1>👤 Dhruv Dashboard</h1>
+
+        <p class="tagline">
+            Sender Dashboard
+        </p>
+
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="success-box">
+                    {{ messages[0] }}
+                </div>
+            {% endif %}
+        {% endwith %}
+
+        <form action="/send" method="POST" enctype="multipart/form-data">
+
+            <h3>Select File</h3>
+
+            <input
+                type="file"
+                name="file"
+                required>
+
+            <br><br>
+
+            <h3>Select Receiver</h3>
+
+            <select name="receiver" required>
+
+                <option value="rahul" selected>
+                    Rahul
+                </option>
+
+            </select>
+
+            <br><br>
+
+            <button class="btn" type="submit">
+                🔒 Encrypt & Send to Rahul
+            </button>
+
+        </form>
+
+        <hr style="margin:35px 0; opacity:.25;">
+
+        <div class="file-box">
+
+            <h3>🔐 Encryption Workflow</h3>
+
+            <p>
+                📄 Upload File
+            </p>
+
+            <p>
+                ⬇
+            </p>
+
+            <p>
+                🔑 ML-KEM-768 Generates Secure Shared Secret
+            </p>
+
+            <p>
+                ⬇
+            </p>
+
+            <p>
+                🔒 AES-256-GCM Encrypts File
+            </p>
+
+            <p>
+                ⬇
+            </p>
+
+            <p>
+                📤 Securely Sent to Rahul
+            </p>
+
+        </div>
+
+        <br>
+
+        <a href="/" class="back-btn">
+            ← Back to Home
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>
